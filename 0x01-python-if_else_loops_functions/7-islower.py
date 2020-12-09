@@ -2,8 +2,7 @@
 
 
 def islower(c):
-
-    if(c >= 'a' and c <= 'z'):
-        return True
-    else:
+    for i in range(97, 123):
+        if ord(c) == i:
+            return True
         return False
