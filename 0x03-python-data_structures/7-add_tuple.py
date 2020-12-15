@@ -4,7 +4,6 @@
 def add_tuple(tuple_a=(), tuple_b=()):
     size1 = len(tuple_a)
     size2 = len(tuple_b)
-    print(size1, size2)
     if size1 == 0:
         list1 = list(tuple_a)
         list1.append(0)
