@@ -4,7 +4,7 @@
  * @head: the start of the list.
  * Return: 0 if it is not a palindrome, 1 if it is a palindrome.
  */
-int is_palindrome(listint_t **head);
+int is_palindrome(listint_t **head)
 {
 	int len = 0, i = 0;
 	int list[2048];
