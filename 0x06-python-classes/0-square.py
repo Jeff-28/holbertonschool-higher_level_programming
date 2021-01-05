@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Square Module - creates and defines the square class.
+"""
 
 
 class Square:
