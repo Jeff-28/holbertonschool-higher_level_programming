@@ -5,5 +5,8 @@ Square Module - creates and defines the square class.
 
 
 class Square:
-    def __init__(self, size=0):
+    """A new class created for an object oriented programming
+        project. It takes the size argument."""
+    def __init__(self, size):
+        """Defines the private attribute size."""
         self.__size = size
