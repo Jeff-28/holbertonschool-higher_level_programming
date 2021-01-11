@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-
+"""
+Text Module
+"""
 
 def text_indentation(text):
+    """
+    Formats text.
+    """
     if type(text) is not str:
         raise TypeError("text must be a string")
     separators = ['.', '?', ':']

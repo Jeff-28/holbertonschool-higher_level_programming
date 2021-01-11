@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-
+"""
+Square Module
+"""
 
 def print_square(size):
+    """
+    Prints a square.
+    """
     if type(size) is not int:
         raise TypeError("size must be an integer")
     if size < 0:

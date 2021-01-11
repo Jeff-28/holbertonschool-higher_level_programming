@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-
+"""
+Matrix Module
+"""
 
 def matrix_divided(matrix, div):
+    """
+    Returns a new matrix.
+    """
     if (type(div) is not int) and (type(div) is not float):
         raise TypeError("div must be a number")
     if div == 0:
