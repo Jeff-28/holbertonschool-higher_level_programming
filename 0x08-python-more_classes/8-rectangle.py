@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 Rectangle Module - creates and defines rectangles.
 """
