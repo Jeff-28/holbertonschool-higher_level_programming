@@ -3,6 +3,7 @@
 Rectangle Module - creates and defines rectangles.
 """
 
+
 class Rectangle:
     """A class to work with Rectangle objects."""
     number_of_instances = 0
@@ -18,6 +19,7 @@ class Rectangle:
     def width(self):
         """Returns the attribute width."""
         return self.__width
+
     @width.setter
     def width(self, value):
         """Defines the width with the value."""
@@ -31,6 +33,7 @@ class Rectangle:
     def height(self):
         """Returns the attribute height."""
         return self.__height
+
     @height.setter
     def height(self, value):
         """Defines the height with the value."""
@@ -58,7 +61,8 @@ class Rectangle:
         """Returns a string representation of the object."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        rec_str = ((str(self.print_symbol) * self.__width) + "\n") * self.__height
+        rec_str = (((str(self.print_symbol) * self.__width) + "\n") *
+                   self.__height)
         return rec_str[:-1]
 
     def __del__(self):

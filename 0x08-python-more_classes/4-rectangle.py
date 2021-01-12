@@ -3,8 +3,10 @@
 Rectangle Module - creates and defines rectangles.
 """
 
+
 class Rectangle:
     """A class to work with Rectangle objects."""
+
     def __init__(self, width=0, height=0):
         """Creates a new object."""
         self.width = width
@@ -14,6 +16,7 @@ class Rectangle:
     def width(self):
         """Returns the attribute width."""
         return self.__width
+
     @width.setter
     def width(self, value):
         """Defines the width with the value."""
@@ -27,6 +30,7 @@ class Rectangle:
     def height(self):
         """Returns the attribute height."""
         return self.__height
+
     @height.setter
     def height(self, value):
         """Defines the height with the value."""
