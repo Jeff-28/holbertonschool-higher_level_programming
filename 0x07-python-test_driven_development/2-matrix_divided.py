@@ -26,7 +26,7 @@ integers/floats")
 integers/floats")
         for value in row:
             if (type(value) is not int) and (type(value) is not float):
-                raise TypeError("matrix must be a matrix (list of lists) of\
+                raise TypeError("matrix must be a matrix (list of lists) of \
 integers/floats")
     return (list(map(lambda row: (list(map(lambda value:
             round(value / div, 2), row))), matrix)))
