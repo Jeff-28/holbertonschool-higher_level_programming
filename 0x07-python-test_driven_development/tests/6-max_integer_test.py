@@ -4,6 +4,7 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
     """Tests to get the max integer in a list"""
 
@@ -25,7 +26,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_max_int_middle(self):
         """Tests if max integer is in the middle"""
-        self.assertEqual(maxinteger([1, 2, 3, 4, 5]), 3)
+        self.assertEqual(maxinteger([1, 2, 5, 4, 3]), 3)
 
 if __name__ == '__main__':
     unittest.main()
