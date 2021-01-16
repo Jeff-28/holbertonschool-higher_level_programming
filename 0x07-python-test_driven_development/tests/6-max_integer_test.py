@@ -23,5 +23,9 @@ class TestMaxInteger(unittest.TestCase):
         """Tests if list has only one value"""
         self.assertEqual(max_integer([1]), 1)
 
+    def test_max_int_middle(self):
+        """Tests if max integer is in the middle"""
+        self.assertEqual(maxinteger([1, 2, 3, 4, 5]), 3)
+
 if __name__ == '__main__':
     unittest.main()

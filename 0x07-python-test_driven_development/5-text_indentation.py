@@ -3,6 +3,7 @@
 Text Module
 """
 
+
 def text_indentation(text):
     """
     Formats text.
