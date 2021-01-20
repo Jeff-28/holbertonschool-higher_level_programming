@@ -72,3 +72,13 @@ TypeError: dict must be an integer
 Traceback (most recent call last):
 ...
 TypeError: set must be an integer
+
+>>> b.integer_validator("frozenset", frozenset(["hello", "world"]))
+Traceback (most recent call last):
+...
+TypeError: frozenset must be an integer
+
+>>> b.integer_validator("bytes", b"bytes")
+Traceback (most recent call last):
+...
+TypeError: bytes must be an integer
