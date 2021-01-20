@@ -57,3 +57,18 @@ TypeError: integer_validator() takes 3 positional arguments but 4 were given
 Traceback (most recent call last):
 ...
 TypeError: area() takes 1 positional argument but 2 were given
+
+>>> b.integer_validator("tuple", (1, 2))
+Traceback (most recent call last):
+...
+TypeError: tuple must be an integer
+
+>>> b.integer_validator("dict", {"key": "value"})
+Traceback (most recent call last):
+...
+TypeError: dict must be an integer
+
+>>> b.integer_validator("set", {"hello", "world"})
+Traceback (most recent call last):
+...
+TypeError: set must be an integer
