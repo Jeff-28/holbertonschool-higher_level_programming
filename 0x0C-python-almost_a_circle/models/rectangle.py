@@ -95,8 +95,13 @@ class Rectangle(Base):
 
     def display(self):
         """Prints in stdout the Rectangle instance with the character #"""
+        for blank in range(self.__y):
+            print()
         for row in range(self.__height):
             for col in range(self.__width):
+                if col == 0:
+                    for blank in range(self.__x):
+                        print(" ", end="")
                 print("#", end="")
             print()
 
