@@ -138,3 +138,18 @@ class Rectangle(Base):
                 if key == "y":
                     self.__y = value
 
+    def to_dictionary(self):
+        """Returns the dictionary representation of an instance"""
+        dictionary = {"id": 0, "width": 0, "height": 0, "x": 0, "y": 0}
+        for key in dictionary:
+            if key == "id":
+                dictionary[key] = self.id
+            if key == "width":
+                dictionary[key] = self.width
+            if key == "height":
+                dictionary[key] = self.height
+            if key == "x":
+                dictionary[key] = self.x
+            if key == "y":
+                dictionary[key] = self.y
+        return sorted(dictionary)
