@@ -3,7 +3,7 @@
 Rectangle Module
 """
 
-Base = __import__("base").Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -152,4 +152,4 @@ class Rectangle(Base):
                 dictionary[key] = self.x
             if key == "y":
                 dictionary[key] = self.y
-        return sorted(dictionary)
+        return dictionary
