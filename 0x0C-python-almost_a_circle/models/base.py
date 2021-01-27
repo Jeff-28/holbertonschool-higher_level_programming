@@ -4,6 +4,7 @@ Base Module
 """
 
 import json
+import csv
 
 
 class Base:
@@ -67,3 +68,38 @@ class Base:
         except:
             instances = []
         return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Has the same behavior as the JSON serialization/deserialization"""
+        csv_file = cls.__name__ + ".csv"
+        with open(csv_file, 'w', newline='') as myfile:
+            writer = csv.writer(myfile)
+            for obj in list_objs:
+                if cls.__name__ is "Rectangle":
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x,
+                                    obj.y])
+                elif cls.__name__ is "Square":
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Has the same behavior as the JSON serialization/deserialization"""
+        csv_file = cls.__name__ + ".csv"
+        lista = []
+        try:
+            with open(csv_file, newline='') as myfile:
+                reader = csv.reader(myfile)
+                for row in reader:
+                    if cls.__name__ is "Rectangle":
+                        dictionary = {"id": int(row[0]), "width": int(row[1]),
+                                      "height": int(row[2]), "x": int(row[3]),
+                                      "y": int(row[4])}
+                    elif cls.__name__ is "Square":
+                        dictionary = {"id": int(row[0]), "size": int(row[1]),
+                                      "x": int(row[2]), "y": int(row[3])}
+                    obj = cls.create(**dictionary)
+                    lista.append(obj)
+        except:
+            pass
+        return lista
