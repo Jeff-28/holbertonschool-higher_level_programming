@@ -23,17 +23,18 @@ class Base:
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of list_dictionaries"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
+            return []
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
         """Writes the JSON string representation of list_objs to a file"""
         text = []
+        j_file = "{}.json".format(cls.__name__)
         if list_objs is not None:
             for i in range(len(list_objs)):
                 text.append(cls.to_dictionary(list_objs[i]))
-        with open("{}.json".format(cls.__name__), 'w', encoding="utf-8") as myfile:
+        with open(j_file, 'w') as myfile:
             myfile.write(cls.to_json_string(text))
 
     @staticmethod
@@ -41,7 +42,7 @@ class Base:
         """Returns the list of the JSON string representation json_string"""
         if json_string is None or len(json_string) == 0:
             return []
-        return list(json.loads(json_string))
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
@@ -56,8 +57,9 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Returns a list of instances"""
+        j_file = "{}.json".format(cls.__name__)
         try:
-            with open("{}.json".format(cls.__name__), 'r') as myfile:
+            with open(j_file, 'r') as myfile:
                 lista = cls.from_json_string(myfile.read())
                 instances = []
                 for i in range(len(lista)):

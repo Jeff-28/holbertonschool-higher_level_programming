@@ -11,26 +11,10 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Class constructor"""
-        if type(width) is not int:
-            raise TypeError("width must be an integer")
-        if width <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = width
-        if type(height) is not int:
-            raise TypeError("height must be an integer")
-        if height <= 0:
-            raise ValueError("height must be > 0")
-        self.__height = height
-        if type(x) is not int:
-            raise TypeError("x must be an integer")
-        if x < 0:
-            raise ValueError("x must be >= 0")
-        self.__x = x
-        if type(y) is not int:
-            raise TypeError("y must be an integer")
-        if y < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -117,26 +101,26 @@ class Rectangle(Base):
                 if i == 0:
                     self.id = args[i]
                 if i == 1:
-                    self.__width = args[i]
+                    self.width = args[i]
                 if i == 2:
-                    self.__height = args[i]
+                    self.height = args[i]
                 if i == 3:
-                    self.__x = args[i]
+                    self.x = args[i]
                 if i == 4:
-                    self.__y = args[i]
+                    self.y = args[i]
 
         else:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
                 if key == "width":
-                    self.__width = value
+                    self.width = value
                 if key == "height":
-                    self.__height = value
+                    self.height = value
                 if key == "x":
-                    self.__x = value
+                    self.x = value
                 if key == "y":
-                    self.__y = value
+                    self.y = value
 
     def to_dictionary(self):
         """Returns the dictionary representation of an instance"""
