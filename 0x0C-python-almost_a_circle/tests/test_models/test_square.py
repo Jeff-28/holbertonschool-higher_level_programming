@@ -37,18 +37,18 @@ class TestSquareDocs(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    """def test_module_docstring(self):
-        ""Tests for the presence of a module docstring""
+    def test_module_docstring(self):
+        """Tests for the presence of a module docstring"""
         self.assertTrue(len(square.__doc__) >= 1)
 
     def test_class_docstring(self):
-        ""Tests for the presence of a class docstring""
+        """Tests for the presence of a class docstring"""
         self.assertTrue(len(Square.__doc__) >= 1)
 
     def test_func_docstrings(self):
-        ""Tests for the presence of docstrings in all functions""
+        """Tests for the presence of docstrings in all functions"""
         for func in self.sq_funcs:
-            self.assertTrue(len(func[1].__doc__) >= 1)"""
+            self.assertTrue(len(func[1].__doc__) >= 1)
 
 
 class TestSquare(unittest.TestCase):

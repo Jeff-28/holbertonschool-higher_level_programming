@@ -10,9 +10,9 @@ import io
 import os
 import json
 import inspect
+from models import rectangle
 from models.rectangle import Rectangle
 from models.base import Base
-"""from models import rectangle"""
 
 
 class TestRectangle(unittest.TestCase):
@@ -341,6 +341,14 @@ class TestRectangleDocs(unittest.TestCase):
         result = pep8style.check_files(['tests/test_models/test_rectangle.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
+
+    def test_module_docstring(self):
+        """Tests for the presence of a module docstring"""
+        self.assertTrue(len(rectangle.__doc__) >= 1)
+
+    def test_class_docstring(self):
+        """Tests for the presence of a class docstring"""
+        self.assertTrue(len(Rectangle.__doc__) >= 1)
 
     def test_func_docstrings(self):
         """Tests for the presence of docstrings in all functions"""
