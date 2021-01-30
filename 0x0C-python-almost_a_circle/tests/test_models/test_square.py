@@ -16,45 +16,47 @@ Square = square.Square
 
 
 class TestSquareDocs(unittest.TestCase):
-    """Tests the Square class' style and documentation"""
+    """Tests the Square class"""
+
     @classmethod
     def setUpClass(cls):
-        """Set up for the doc tests"""
+        """Set up for the tests"""
         cls.sq_funcs = inspect.getmembers(Square, inspect.isfunction)
 
     def test_pep8_conformance_square(self):
-        """Test that models/square.py conforms to PEP8."""
+        """Tests pep8 validation."""
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/square.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
     def test_pep8_conformance_test_rectangle(self):
-        """Test that tests/test_models/test_square.py conforms to PEP8."""
+        """Tests pep8 validation."""
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['tests/test_models/test_square.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def test_module_docstring(self):
-        """Tests for the presence of a module docstring"""
+    """def test_module_docstring(self):
+        ""Tests for the presence of a module docstring""
         self.assertTrue(len(square.__doc__) >= 1)
 
     def test_class_docstring(self):
-        """Tests for the presence of a class docstring"""
+        ""Tests for the presence of a class docstring""
         self.assertTrue(len(Square.__doc__) >= 1)
 
     def test_func_docstrings(self):
-        """Tests for the presence of docstrings in all functions"""
+        ""Tests for the presence of docstrings in all functions""
         for func in self.sq_funcs:
-            self.assertTrue(len(func[1].__doc__) >= 1)
+            self.assertTrue(len(func[1].__doc__) >= 1)"""
 
 
 class TestSquare(unittest.TestCase):
-    """Test the functionality of the Square class"""
+    """Tests the Square class"""
+
     @classmethod
     def setUpClass(cls):
-        """set up the tests"""
+        """Sets up the tests"""
         Base._Base__nb_objects = 0
         cls.s1 = Square(1)
         cls.s2 = Square(2, 3)
@@ -62,41 +64,42 @@ class TestSquare(unittest.TestCase):
         cls.s4 = Square(7, 8, 9, 10)
 
     def test_id(self):
-        """Test for functioning ID"""
+        """Tests the attribute"""
         self.assertEqual(self.s1.id, 1)
         self.assertEqual(self.s2.id, 2)
         self.assertEqual(self.s3.id, 3)
         self.assertEqual(self.s4.id, 10)
 
     def test_size(self):
-        """Test for functioning size"""
+        """Tests the attribute"""
         self.assertEqual(self.s1.size, 1)
         self.assertEqual(self.s2.size, 2)
         self.assertEqual(self.s3.size, 4)
         self.assertEqual(self.s4.size, 7)
 
     def test_width(self):
+        """Tests the attribute"""
         self.assertEqual(self.s1.width, 1)
         self.assertEqual(self.s2.width, 2)
         self.assertEqual(self.s3.width, 4)
         self.assertEqual(self.s4.width, 7)
 
     def test_height(self):
-        """Test for functioning height"""
+        """Tests the attribute"""
         self.assertEqual(self.s1.height, 1)
         self.assertEqual(self.s2.height, 2)
         self.assertEqual(self.s3.height, 4)
         self.assertEqual(self.s4.height, 7)
 
     def test_x(self):
-        """Test for functioning x"""
+        """Tests the attribute"""
         self.assertEqual(self.s1.x, 0)
         self.assertEqual(self.s2.x, 3)
         self.assertEqual(self.s3.x, 5)
         self.assertEqual(self.s4.x, 8)
 
     def test_y(self):
-        """Test for functioning y"""
+        """Tests the attribute"""
         self.assertEqual(self.s1.y, 0)
         self.assertEqual(self.s2.y, 0)
         self.assertEqual(self.s3.y, 6)
@@ -313,18 +316,18 @@ class TestSquare(unittest.TestCase):
             ls = [s1.to_dictionary(), s2.to_dictionary()]
             self.assertEqual(json.dumps(ls), f.read())
 
-    """def test_stf_empty(self):
-        ""test save_to_file with empty list""
+    def test_stf_empty(self):
+        """test save_to_file with empty list"""
         l = []
         Square.save_to_file(l)
         with open("Square.json", "r") as f:
             self.assertEqual("[]", f.read())
 
     def test_stf_None(self):
-        ""test save_to_file with None""
+        """test save_to_file with None"""
         Square.save_to_file(None)
         with open("Square.json", "r") as f:
-            self.assertEqual("[]", f.read())"""
+            self.assertEqual("[]", f.read())
 
     def test_create(self):
         """test normal use of create"""
