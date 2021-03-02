@@ -6,4 +6,4 @@
 -- If the table states already exists, your script should not fail.
 
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
-CREATE TABLE IF NOT EXISTS states (id INT UNIQUE AUTO_INCREMENT NOT NULL, primary key(id), name VARCHAR(256));
+CREATE TABLE IF NOT EXISTS hbtn_0d_usa.states (id INT UNIQUE AUTO_INCREMENT NOT NULL primary key, name VARCHAR(256));
