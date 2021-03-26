@@ -1,8 +1,8 @@
 #!/usr/bin/nodejs
 
-f1 = process.argv[2];
-f2 = process.argv[3];
-f3 = process.argv[4];
+const f1 = process.argv[2];
+const f2 = process.argv[3];
+const f3 = process.argv[4];
 
 const fs = require('fs');
 
