@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-A script that creates the State “California” with
-the City “San Francisco” from the database hbtn_0e_100_usa
+A script that lists all State objects, and corresponding City objects,
+contained in the database hbtn_0e_101_usa
 """
 
 from sys import argv
@@ -17,8 +17,8 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = State(name="California")
-    state.cities = [City(name="San Francisco")]
-    session.add(state)
-    session.commit()
-    session.close()
+    states = session.query(State).all()
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("    {}: {}".format(city.id, city.name))
