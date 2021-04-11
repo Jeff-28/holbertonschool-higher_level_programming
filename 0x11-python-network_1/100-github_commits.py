@@ -18,8 +18,10 @@ if __name__ == '__main__':
     r = requests.get('https://api.github.com/repos/{}/{}/\
                      commits'.format(argv[2], argv[1]))
     data = r.json()
-    if data:
+    try:
         for j in range(10):
             print('{}: {}'.format(data[j].get('sha'),
                                   data[j].get('commit')
                                   .get('author').get('name')))
+    except:
+        pass
