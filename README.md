@@ -1,15 +1,19 @@
-# 0x03. Python - Data Structures: Lists, Tuples
+# Higher-Level Programming
 
-## Learning Objectives
-* Why Python programming is awesome
-* What are lists and how to use them
-* What are the differences and similarities between strings and lists
-* What are the most common methods of lists and how to use them
-* How to use lists as stacks and queues
-* What are list comprehensions and how to use them
-* What are tuples and how to use them
-* When to use tuples versus lists
-* What is a sequence
-* What is tuple packing
-* What is sequence unpacking
-* What is the del statement and how to use it
+## Synopsis
+This repo contains projects based on Python3, MySQL and JavaScript languages.
+Concepts and topics included (but not limited to):
+* Following a coding style standard and commenting code
+* Data structures
+* Operators
+* Expressions and variables
+* Loops and nested loops
+* Conditional statements
+* Functions
+* Importing
+* Exceptions
+* Code testing
+* Classes and inheritance
+* SQL and SQLAlchemy
+* Requests
+* Web scraping
