@@ -1,8 +1,7 @@
-# Higher-Level Programming
+# holbertonschool-higher_level_programming
 
-## Synopsis
-This repo contains projects based on Python3, MySQL and JavaScript languages.
-Concepts and topics included (but not limited to):
+This repo contains projects based on Python3, MySQL and JavaScript.
+The concepts that I learned include:
 * Following a coding style standard and commenting code
 * Data structures
 * Operators
